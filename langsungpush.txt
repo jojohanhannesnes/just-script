@@ -1,0 +1,8 @@
+langsungpush () {
+  CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+  git status
+  git pull upstream $CURRENT_BRANCH
+  git add .
+  git commit -m "${1:-commit}"
+  git push origin $CURRENT_BRANCH
+}
