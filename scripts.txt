@@ -1,0 +1,2 @@
+awk -F'[[]]' 'BEGIN{printf "["}NR{printf "%s,",$1}END{printf "]"}' file
+cat file | grep -E '#.\[.*\..*\]' | sed 's/[][#]//g'
