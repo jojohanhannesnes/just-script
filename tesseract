@@ -1,0 +1,5 @@
+# tesseract all png current folder
+for i in *.png; do
+    output_file="outtext_${i%.*}"
+    tesseract "$i" "$output_file"
+done
