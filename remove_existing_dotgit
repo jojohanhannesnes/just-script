@@ -1,1 +1,4 @@
  find . -type d -name ".git" -exec rm -rf {} +
+
+recursive remove exclude .git
+find . -maxdepth 1 -type f -not -path './.git/*' -exec rm -f {} \;
